@@ -29,6 +29,18 @@ Add **AUTH_SECRET** under Worker → Settings → Variables and Secrets.
 
 Worker name: `analytics-demo-beone`
 
+### GitHub Actions (alternative to dashboard Git integration)
+
+This repo includes `.github/workflows/deploy-cloudflare.yml`. Add these secrets under GitHub → Settings → Secrets and variables → Actions:
+
+| Secret | Value |
+|--------|--------|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with Workers Scripts:Edit |
+| `CLOUDFLARE_ACCOUNT_ID` | `a56999249f230e52c5856d42eaee5f33` |
+| `AUTH_SECRET` | Same secret used for NextAuth |
+
+Every push to `main` builds and deploys automatically.
+
 ### Manual deploy
 
 ```bash
