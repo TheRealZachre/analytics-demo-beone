@@ -1,0 +1,30 @@
+# Copy to .dev.vars for local OpenNext/Wrangler preview (do not commit .dev.vars)
+NEXTJS_ENV=development
+
+# =============================================================================
+# Fastest fix (one command, after wrangler login):
+#   npx wrangler login
+#   npm run setup:cloudflare
+# =============================================================================
+
+# =============================================================================
+# Cloudflare Workers Builds — recommended dashboard settings
+# =============================================================================
+# Build command:  npm run build
+# Deploy command: npx wrangler deploy
+#
+# npm run build uses scripts/build.sh: OpenNext at the top level, plain next
+# build when OpenNext invokes npm run build internally (avoids recursion).
+#
+# Add AUTH_SECRET under Worker → Settings → Variables and Secrets.
+#
+# Alternative (build + deploy in one step):
+#   Build command:  npm run ci:cloudflare
+#   Deploy command: echo "deployed in build step"
+
+# AUTH_SECRET=
+# AUTH_URL=https://your-worker.workers.dev
+
+# Optional API keys
+# OPENAI_API_KEY=
+# TRANSCRIPTION_PROVIDER=openai

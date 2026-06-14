@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "analytics-demo-beone",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-06-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "analytics-demo-beone"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "CLOUDFLARE_WORKERS": "1",
+    "AUTH_ADMIN_EMAILS": "zach@zachre.com,zach@everythingandanythingpodcast.com",
+    "NEXT_PUBLIC_PLATFORM_URL": "https://digitaltest.zach-a56.workers.dev",
+    "PLATFORM_APP_URL": "https://digitaltest.zach-a56.workers.dev"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "ANALYTICS_DATA_KV",
+      "id": "fd40dd4102104d6b94396c9ed305dd9d",
+      "preview_id": "0241361bf823488081f1afe9ed274280"
+    }
+  ]
+}
